@@ -106,3 +106,8 @@ sequelize.sync({force:true})
             })
         
         })
+
+
+Les validateurs => charger de la validation d un modele au nveau du code js pure. Il en existe plusieurs mais on peut tout de meme en creer (Isint , Isemail  isUrl ...)
+ et les contraintes => ce sont les regles definit directement dans la base de donnees => requete a la base de donnees
+  les erreur metiers(4h58)

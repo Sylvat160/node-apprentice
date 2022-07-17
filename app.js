@@ -35,7 +35,18 @@ app.use(morgan('dev'))
 sequelize.initDb()
 
 // Place dediee aux futurs point de terminaisons
+require('./src/routes/findAllPkemon')(app)
+require('./src/routes/findPokemonByPk')(app)
+require('./src/routes/createPokemon')(app)
+require('./src/routes/updatePokemon')(app)
+require('./src/routes/deletePokemon')(app)
+require('./src/routes/login')(app)
 
- 
+
+// La gestion d'erreur
+app.use(({res}) => {
+    const message = 'Impossible de trouver la ressource demandee ! Vous pouvez reessayez';
+    res.status(404).json({message})
+})
 
 app.listen(port, () => console.log(`Ca court sur : http://localhost:${port}`))  
